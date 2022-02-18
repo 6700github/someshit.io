@@ -1,0 +1,177 @@
+<!doctype html>
+<html version="9.7.6" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Free Text to Speech Online with Natural Voices</title>
+  <meta name="Description"
+    content="Text to speech with natural sounding voices. Supports PDF, word, ebooks, webpages, Convert text to audio files.">
+  <meta name="Keywords"
+    content="text to speech, text to voice, text speak, text reader, voice reader, text to voice, tts, free text to speech, read text, speech engine,">
+  <base href="/online/">  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="theme-color" content="#1976d2">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" as="style" onload="this.rel = 'stylesheet'">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" as="style" onload="this.rel = 'stylesheet'">
+
+  <link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons" as="style" onload="this.rel = 'stylesheet'">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="manifest" href="manifest.json">
+
+  <!-- IOS PWA settings -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="NaturalReader">
+
+  <!-- icons on IOS -->
+  <link rel="apple-touch-icon" href="assets/icons/R_72.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="assets/icons/R_152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/R_192.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="assets/icons/R_152.png">
+
+  <!-- splash screen on IOS -->
+  <link href="assets/splashscreens/iphone5_splash.png"
+    media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+    rel="apple-touch-startup-image" />
+  <link href="assets/splashscreens/iphone6_splash.png"
+    media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+    rel="apple-touch-startup-image" />
+  <link href="assets/splashscreens/iphoneplus_splash.png"
+    media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+    rel="apple-touch-startup-image" />
+  <link href="assets/splashscreens/iphonex_splash.png"
+    media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+    rel="apple-touch-startup-image" />
+  <link href="assets/splashscreens/iphonexr_splash.png"
+    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+    rel="apple-touch-startup-image" />
+  <link href="assets/splashscreens/iphonexsmax_splash.png"
+    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+    rel="apple-touch-startup-image" />
+  <link href="assets/splashscreens/ipad_splash.png"
+    media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+    rel="apple-touch-startup-image" />
+  <link href="assets/splashscreens/ipadpro1_splash.png"
+    media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+    rel="apple-touch-startup-image" />
+  <link href="assets/splashscreens/ipadpro3_splash.png"
+    media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+    rel="apple-touch-startup-image" />
+  <link href="assets/splashscreens/ipadpro2_splash.png"
+    media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+    rel="apple-touch-startup-image" />
+
+    <!-- Facebook integration -->
+  <meta property="og:title" content="text to speech online" />
+  <meta property="og:image" content="https://www.naturalreaders.com/images/share_preview2.jpg" />
+
+  <!-- Foreign Scripts -->
+  <script src="https://js.stripe.com/v3/"></script>
+  <script async src='https://r.wdfl.co/rw.js' data-rewardful='be0988'></script>
+  <script>(function(w,r){w._rwq=r;w[r]=w[r]||function(){(w[r].q=w[r].q||[]).push(arguments)}})(window,'rewardful');</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CW9Z1LWZ31"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-CW9Z1LWZ31');
+  </script>
+
+  <style>
+    #audio {
+      display: none;
+    }
+
+    .center {
+      /* display: none; */
+      margin: auto;
+      width: 55%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      padding: 30px;
+      font-size: 25px
+    }
+
+    .top {
+      /* display: none; */
+      margin: 0;
+      width: 100%;
+      height: 45px;
+      padding: 5px;
+      font-size: 40px
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .appText {
+      font-size: 4.0vw;
+    }
+
+    .refreshText {
+      font-size: 1.15vw;
+    }
+
+    @media screen and (max-width: 575px) {
+      .appText {
+        font-size: 7.0vw;
+      }
+
+      .refreshText {
+        font-size: 2.0vw;
+      }
+    }
+  </style>
+<link rel="stylesheet" href="styles.38a01657a7ac9b64cb79.css"></head>
+
+<body>
+  <div id='app-loading'>
+    <div>
+      <div style="height:100%;
+      width:100%;
+      margin:0;
+      color:#eff0f5;
+      background-image: linear-gradient(180deg, #143E6E, #5cf0eb);
+      background-repeat: no-repeat;
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
+      justify-content: center;">
+        <p class="appText" style="font-family: 'Noto Sans', Helvetica; text-align: center">
+          NaturalReader</p>
+        <a class="refreshText" href="https://www.naturalreaders.com/online/"
+          style="font-family: 'Noto Sans', Helvetica; text-decoration: none; text-align: center; color:#eff0f5">Refresh
+          the page if you're not redirected shortly.</a>
+      </div>
+    </div>
+  </div>
+  <!-- <app-root></app-root> -->
+  <iframe id="downloadFrame" src="chrome-extension://kohfgcgbkjodfcfkcackpagifgbcmimk/download/download.html"
+    style="display: none;"></iframe>
+  <script>
+    if (global === undefined) {
+      var global = window;
+    }
+    // var userAgent = navigator.userAgent.toLowerCase();
+    // if (userAgent.indexOf('electron/') > -1) {
+    //   // window.$ = window.jQuery = require('jquery');
+    //   window.Bootstrap = require('bootstrap');
+    // }
+    var userAgent = navigator.userAgent.toLowerCase();
+    if (userAgent.indexOf('electron/') > -1) {
+      document.title = "NaturalReader 16";
+      window.nodeRequire = require;
+      delete window.require;
+      delete window.exports;
+      delete window.module;
+    }
+  </script>
+
+  <noscript>Please enable JavaScript to continue using this application.</noscript>
+<script src="runtime.5ca0fe6c65e5b6ce0fc9.js" defer></script><script src="polyfills-es5.e192b92c0f0d8d8ff295.js" nomodule defer></script><script src="polyfills.12f0b23ec630b25312c3.js" defer></script><script src="scripts.42bcb5b1b4094a83b989.js" defer></script><script src="main.077f3be69040218229e1.js" defer></script></body>
+
+</html>
