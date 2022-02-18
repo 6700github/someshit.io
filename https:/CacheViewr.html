@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="index.js"></script>
+    <link href="css/style.css" type="text/css" rel="stylesheet"/>
+    
+    <title>CachedView</title>
+    <meta name="description" content="CachedView searches multiple providers to see if a webpage is in their cache, and will link you to the result.">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2b5797">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="google-site-verification" content="piZ_DXFLqQTFADYOhPIuCjpFSWOU7b6wJOj27LnRcD4" />
+  </head> 
+  <body>
+    <main class="wrapper">
+      <h1>CachedView</h1>
+      <picture class="stupidlogo" aria-hidden="true">
+        <source srcset="img/logo.webp" type="image/webp" aria-hidden="true">
+        <source srcset="img/logo.png" type="image/jpeg" aria-hidden="true"> 
+        <img class="stupidlogo" src="img/logo.png" alt="CashewView hehe" aria-hidden="true">
+      </picture>
+          
+      <div class="interaction">
+        Enter your URL here to get its current status and view any cached/archived results. Click on one of the cards to view a result.
+        <input type="url" id="putin" aria-label="Search URL" role="search" placeholder="Search URL"/>
+        <span id="validity"></span>
+      </div>
+      
+      <div class="services">
+        <div class="widget webcache" target="_blank" rel="noopener nofollow">
+          <a class="url" target="_blank" rel="noopener nofollow"><div class="status"></div></a>
+          <div class="info">
+            <a class="url" target="_blank" rel="noopener nofollow" aria-label="Go to Google Webcache to see if they have the Search URL cached.">Google Webcache</a>
+            <a class="msg" target="_blank" rel="noopener nofollow"></a>
+          </div>
+        </div>
+        <div class="widget archive" target="_blank" rel="noopener nofollow">
+          <a class="url" target="_blank" rel="noopener nofollow"><div class="status"></div></a>
+          <div class="info">
+            <a class="url" target="_blank" rel="noopener nofollow" aria-label="Go to The Wayback Machine to see if they have the Search URL archived.">Wayback Machine</a>
+            <a class="msg" target="_blank" rel="noopener nofollow"></a>
+          </div>
+        </div>
+        <div class="widget today" target="_blank" rel="noopener nofollow">
+          <a class="url" target="_blank" rel="noopener nofollow"><div class="status"></div></a>
+          <div class="info">
+            <a class="url" target="_blank" rel="noopener nofollow" aria-label="Go to Archive.today to see if they have the Search URL archived.">Archive.today</a>
+            <a class="msg" target="_blank" rel="noopener nofollow"></a>
+          </div>
+        </div>
+        <div class="widget libraryofcongress" target="_blank" rel="noopener nofollow">
+          <a class="url" target="_blank" rel="noopener nofollow"><div class="status"></div></a>
+          <div class="info">
+            <a class="url" target="_blank" rel="noopener nofollow" aria-label="Go to the Library of Congress to see if they have the Search URL archived.">Library of Congress</a>
+            <a class="msg" target="_blank" rel="noopener nofollow"></a>
+          </div>
+        </div>
+        <div class="widget permacc" target="_blank" rel="noopener nofollow">
+          <a class="url" target="_blank" rel="noopener nofollow"><div class="status"></div></a>
+          <div class="info">
+            <a class="url" target="_blank" rel="noopener nofollow" aria-label="Go to Perma.cc to see if they have the Search URL archived.">Perma.cc</a>
+            <a class="msg" target="_blank" rel="noopener nofollow"></a>
+          </div>
+        </div>
+        <div class="widget live" target="_blank" rel="noopener nofollow">
+          <a class="url" target="_blank" rel="noopener nofollow"><div class="status"></div></a>
+          <div class="info">
+            <a class="url" target="_blank" rel="noopener nofollow" aria-label="Go to the live version of the Search URL">Live Version</a>
+            <a class="msg" target="_blank" rel="noopener nofollow"></a>
+          </div>
+        </div>
+        <div class="widget screenshot" target="_blank" rel="noopener nofollow">
+          <img class="hidden screenshot_image" data-src="img/loader.svg" src="img/loader.svg" alt="Screenshot of the live version">
+          <div class="ephemeral_warning">This screenshot is non-persistent. <a class="screenshot_download">Save it</a> to your own PC if you need it for later reference.</div>
+          <a class="url" target="_blank" rel="noopener nofollow"><div class="status"></div></a>
+          <div class="info">
+            <a class="url" target="_blank" rel="noopener nofollow" aria-label="Get a screenshot of the page at the Search URL">Screenshot</a>
+            <a class="msg" target="_blank" rel="noopener nofollow">Click to request a screenshot of your URL</a>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <a class="bookmarklet" href="javascript:(function(){location.href='https://cachedview.nl/#'+encodeURIComponent(location.href);})();">CachedView</a>
+      </footer>
+    </main>  
+  </body>
+</html>
